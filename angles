@@ -1,0 +1,25 @@
+import numpy as np
+import scipy.linalg
+ 
+def vector_angles(X, Y):
+    normx = scipy.linalg.norm(X, 2, axis=1)
+    normy = scipy.linalg.norm(Y, 2, axis=1)
+    print(f"x noramlised:   {normx}")
+    print(f"y normal;ised:  {normy}")
+    
+    gg = np.dot(X, Y) / np.sqrt(normx * normy)    
+    gg = tmp.flatten()        
+    rads = np.arccos(np.clip(gg, -1, 1))    
+    degs = np.degrees(rads)
+    print('in degrees:  ', degs) 
+    return degs
+ 
+def main():
+    # a = np.array([[0, 0, 1], [-1, 1, 0], [1, 1, 0]])
+    # b = np.array([[0, 1, 0], [1, 1, 0], [1, 1, 0]]) 
+    a = np.array([[1, 2, 3], [3, 6, 7]])
+    b = np.array([[4, 5, 6], [4, 5, 7]]) 
+    print(vector_angles(a, b))
+ 
+if __name__ == "__main__":
+    main()
