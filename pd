@@ -1,0 +1,6 @@
+import pandas as pd
+inport numpy as np
+wh = pd.read_csv("https://www.cs.helsinki.fi/u/jttoivon/dap/data/fmi/kumpula-weather-2017.csv")
+wh.head()
+
+
